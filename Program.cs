@@ -1,6 +1,13 @@
+using HotelManagement.MVC.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//register the databse to the application
+// Add services to the IoC container.
+
+var conn = builder.Configuration.GetConnectionString("HotelManagementDbConnection");
+builder.Services.AddDbContext<HotelManagementDbContext>(q=>q.UseSqlServer(conn));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
