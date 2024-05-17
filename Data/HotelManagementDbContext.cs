@@ -11,12 +11,30 @@ public partial class HotelManagementDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Booking> Bookings { get; set; }
+
     public virtual DbSet<Customer> Customers { get; set; }
 
     public virtual DbSet<Room> Rooms { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Booking>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Bookings__3214EC07F6F24C4E");
+
+            entity.Property(e => e.CustomerId).HasColumnName("customerId");
+            entity.Property(e => e.RoomId).HasColumnName("roomId");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.CustomerId)
+                .HasConstraintName("FK__Bookings__custom__36B12243");
+
+            entity.HasOne(d => d.Room).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.RoomId)
+                .HasConstraintName("FK__Bookings__roomId__37A5467C");
+        });
+
         modelBuilder.Entity<Customer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__customer__3213E83FEBC75587");
