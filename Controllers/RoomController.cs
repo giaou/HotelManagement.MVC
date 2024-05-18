@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HotelManagement.MVC.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelManagement.MVC.Controllers
 {
+    [Authorize]
     public class RoomController : Controller
     {
         private readonly HotelManagementDbContext _context;
