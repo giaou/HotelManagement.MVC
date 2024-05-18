@@ -19,7 +19,7 @@ public partial class Customer
 
     public string CardNumber { get; set; } = null!;
 
-    public DateOnly DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; }
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 }
