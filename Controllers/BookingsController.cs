@@ -21,7 +21,12 @@ namespace HotelManagement.MVC.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index()
         {
-            var hotelManagementDbContext = _context.Bookings.Include(b => b.Customer).Include(b => b.Room);
+            //SELECT * FROM bookings b 
+            //LEFT JOIN Customer co on b.CustomerId = co.Id
+            //LEFT JOIN Room r on b.RoomId = r.Id
+            var hotelManagementDbContext = _context.Bookings
+            .Include(b => b.Customer)
+            .Include(b => b.Room);
             return View(await hotelManagementDbContext.ToListAsync());
         }
 
