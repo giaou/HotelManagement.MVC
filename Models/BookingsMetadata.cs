@@ -10,6 +10,11 @@ public class BookingsMetadata{
     [Display(Name = "Room ID")]
     public int? RoomId { get; set; }
 
+    [Display(Name = "Customer ID")]
+    public virtual Customer? Customer { get; set; }
+    [Display(Name = "Room ID")]
+    public virtual Room? Room { get; set; }
+
 }
 
 [ModelMetadataType(typeof(BookingsMetadata))]
