@@ -4,15 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace HotelManagement.MVC.Data;
 public class BookingsMetadata{
 
-    [Display(Name = "Customer ID")]
+    [Display(Name = "Customer")]
     public int? CustomerId { get; set; }
 
-    [Display(Name = "Room ID")]
+    [Display(Name = "Room Number")]
     public int? RoomId { get; set; }
 
-    [Display(Name = "Customer ID")]
     public virtual Customer? Customer { get; set; }
-    [Display(Name = "Room ID")]
     public virtual Room? Room { get; set; }
 
 }
