@@ -53,8 +53,17 @@ namespace HotelManagement.MVC.Controllers
         // GET: Bookings/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
-            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "Id");
+            var customers = _context.Customers.Select(q=>new
+            {
+                Fullname = $"{q.FirstName} {q.LastName}",
+                Id = q.Id
+            });
+            ViewData["CustomerId"] = new SelectList(customers, "Id", "Fullname");
+            var rooms = _context.Rooms.Select(q => new 
+            {
+                
+            });
+            ViewData["RoomId"] = new SelectList(_context.Rooms, "Id", "RoomNumber");
             return View();
         }
 
