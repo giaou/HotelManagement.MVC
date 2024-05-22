@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2024-05-22T14:07:33.695Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="vMnPijzX9tBf5Bgj4-eq" version="24.4.4" type="device">
+  <diagram name="Page-1" id="Uz2S7hzVUAIqJfq5tGnX">
+    <mxGraphModel dx="1050" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-1" value="customer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="90" width="150" height="190" as="geometry">
+            <mxRectangle x="130" y="90" width="100" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-2" value="1. Id&lt;div&gt;2. fname&lt;/div&gt;&lt;div&gt;3. lname&lt;/div&gt;&lt;div&gt;4. email&lt;/div&gt;&lt;div&gt;5. phone#&lt;/div&gt;&lt;div&gt;6.driverlicense&lt;/div&gt;&lt;div&gt;7.card#&lt;/div&gt;&lt;div&gt;8.D0B&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="BLdxmbcuhEb9yxZTkbdn-1" vertex="1">
+          <mxGeometry y="50" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-4" value="room" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="90" width="150" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-5" value="1. Id&lt;div&gt;2. Room#&lt;/div&gt;&lt;div&gt;3. RoomStatus&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="BLdxmbcuhEb9yxZTkbdn-4" vertex="1">
+          <mxGeometry y="50" width="150" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="BLdxmbcuhEb9yxZTkbdn-4" source="BLdxmbcuhEb9yxZTkbdn-5" target="BLdxmbcuhEb9yxZTkbdn-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-7" value="booking&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="310" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-8" value="1. Id&lt;div&gt;2. CustomerId&lt;/div&gt;&lt;div&gt;3. RoomID&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="BLdxmbcuhEb9yxZTkbdn-7" vertex="1">
+          <mxGeometry y="50" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.111;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BLdxmbcuhEb9yxZTkbdn-2" target="BLdxmbcuhEb9yxZTkbdn-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.997;entryY=0.129;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="BLdxmbcuhEb9yxZTkbdn-5" target="BLdxmbcuhEb9yxZTkbdn-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-17" value="1 to many&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="190" y="323" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BLdxmbcuhEb9yxZTkbdn-18" value="1 to 1&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="520" y="310" width="50" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
