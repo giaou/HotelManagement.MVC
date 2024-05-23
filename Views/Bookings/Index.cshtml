@@ -25,17 +25,55 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                @item.Customer.FirstName @item.Customer.LastName
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Room.RoomNumber)
+                @item.Room.RoomNumber
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class= "btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <button class="btn btn-danger deleteBtn" data-id="@item.Id" type="button" >Delete</button>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<form asp-action="Delete" id="bookingDeleteForm">
+    <input type="hidden" id=bookingId name="Id"/>
+</form>
+
+
+
+
+@section Scripts{
+    <script>
+        $(function(){
+            new DataTable('.table');
+            $('.deleteBtn').click(function(e){
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                        });
+                        var btn = $(this);
+                        var id = btn.data("id");
+                        $('#bookingId').val(id);
+                        $('#bookingDeleteForm').submit();
+                    }
+                });
+            })
+        })
+    </script>
+}
